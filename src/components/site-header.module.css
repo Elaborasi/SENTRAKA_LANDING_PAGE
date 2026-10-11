@@ -1,0 +1,85 @@
+.header {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  width: min(100% - 3rem, 82rem);
+  margin-inline: auto;
+  padding-block: 1.45rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: header-in 600ms 80ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.brand {
+  width: fit-content;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 2.5vw, 2.7rem);
+  font-size: 0.76rem;
+  font-weight: 550;
+}
+
+.nav a {
+  position: relative;
+  padding-block: 0.65rem;
+  transition: color 180ms ease;
+}
+
+.nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--orange);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 240ms ease;
+}
+
+.nav .active::after,
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.header > :last-child {
+  justify-self: end;
+}
+
+@keyframes header-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 820px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    width: min(100% - 2rem, 82rem);
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .nav a,
+  .nav a::after {
+    transition: none;
+  }
+}

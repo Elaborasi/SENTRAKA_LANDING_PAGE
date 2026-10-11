@@ -1,0 +1,90 @@
+.cta {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  border: 1px solid var(--forest);
+  border-radius: 999px;
+  background: var(--forest);
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1;
+  box-shadow: 0 0.75rem 2rem rgba(15, 61, 51, 0.12);
+  transition:
+    transform 240ms ease,
+    background-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.primary {
+  min-width: 17.7rem;
+  padding: 0.9rem 1.2rem 0.9rem 1rem;
+}
+
+.nav {
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.78rem;
+}
+
+.whatsapp {
+  flex: 0 0 auto;
+}
+
+.arrow {
+  margin-left: auto;
+  transition: transform 240ms ease;
+}
+
+.nav .arrow {
+  margin-left: 0.1rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover {
+    transform: translateY(-2px);
+    background: #145447;
+    box-shadow: 0 1rem 2.2rem rgba(15, 61, 51, 0.18);
+  }
+
+  .cta:hover .arrow {
+    transform: translateX(3px);
+  }
+}
+
+.cta:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--orange) 55%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .nav span {
+    display: none;
+  }
+
+  .nav {
+    min-width: 3rem;
+    padding: 0.7rem;
+  }
+
+  .nav .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .primary {
+    width: 100%;
+    min-width: 0;
+    min-height: 3.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .arrow {
+    transition: none;
+  }
+}
