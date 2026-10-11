@@ -6,9 +6,9 @@ import { WhatsAppCta } from "./whatsapp-cta";
 import styles from "./hero.module.css";
 
 const assurances = [
-  "Solusi sesuai kebutuhan",
-  "Proses yang jelas",
-  "Pendampingan berkelanjutan",
+  "Pengembangan software",
+  "Otomasi & integrasi sistem",
+  "Produk digital",
 ];
 
 export function Hero() {
@@ -19,24 +19,25 @@ export function Hero() {
 
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.copy}>
-          <p className={styles.eyebrow}>Digital solutions for business</p>
+          <p className={styles.eyebrow}>
+            Terarah, berguna, dan dapat diandalkan
+          </p>
           <h1 id="hero-title" className={styles.headline}>
             <span className={styles.line}>
-              <span>Bisnis terus bertumbuh.</span>
+              <span>Mitra teknologi untuk</span>
             </span>
             <span className={`${styles.line} ${styles.accentLine}`}>
-              <span>Sistem harus mengikuti.</span>
+              <span>solusi digital yang praktis.</span>
             </span>
           </h1>
           <p className={styles.supporting}>
-            Kami membantu bisnis menyederhanakan proses kerja melalui software,
-            otomasi, dan data yang saling terhubung—agar tim bisa fokus pada hal
-            yang lebih berarti.
+            Sentraka Digital membangun solusi digital praktis untuk
+            menyederhanakan pekerjaan dan menghubungkan proses bisnis.
           </p>
           <div className={styles.actions}>
             <WhatsAppCta>Diskusikan kebutuhan Anda</WhatsAppCta>
             <a className={styles.secondary} href="#cara-kerja">
-              <span>Kenali pendekatan kami</span>
+              <span>Lihat cara kami bekerja</span>
               <ArrowRightIcon />
             </a>
           </div>
@@ -55,7 +56,7 @@ export function Hero() {
         <div className={styles.visual} id="layanan">
           <p className={styles.visualKicker}>
             <span>01—04</span>
-            Dari kebutuhan menuju pertumbuhan
+            Solusi digital untuk bisnis yang lebih maju
           </p>
           <StorySystem />
         </div>

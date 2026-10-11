@@ -1,4 +1,6 @@
 :root {
+  --font-body: var(--font-space-grotesk);
+  --font-heading: var(--font-space-grotesk);
   --forest: #0f3d33;
   --navy: #1e293b;
   --orange: #f97316;
@@ -23,7 +25,7 @@ body {
   min-height: 100%;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-body), Arial, sans-serif;
+  font-family: var(--font-space-grotesk), Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

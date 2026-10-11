@@ -1,23 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const manrope = Manrope({
-  variable: "--font-heading",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sentraka Digital — Sistem yang Bertumbuh Bersama Bisnis",
+  title: "Sentraka Digital — Solusi Digital untuk Bisnis yang Lebih Maju",
   description:
-    "Sentraka Digital membantu bisnis menyederhanakan proses kerja melalui software, otomasi, dan data yang saling terhubung.",
+    "Sentraka Digital adalah mitra teknologi untuk software, otomasi proses, integrasi sistem, dan produk digital yang praktis serta dapat diandalkan.",
 };
 
 export const viewport: Viewport = {
@@ -27,7 +21,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="id" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="id" className={spaceGrotesk.variable}>
       <body>{children}</body>
     </html>
   );

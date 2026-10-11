@@ -7,12 +7,16 @@ import {
 } from "./icons";
 import styles from "./process-strip.module.css";
 
-const before = ["File tersebar", "Pekerjaan repetitif", "Laporan manual"];
+const before = [
+  "Pekerjaan tersebar",
+  "Proses berulang",
+  "Data belum terhubung",
+];
 const after = [
-  "Proses terotomasi",
-  "Data terintegrasi",
-  "Laporan real-time",
-  "Siap bertumbuh",
+  "Software yang tepat",
+  "Proses lebih ringkas",
+  "Sistem saling terhubung",
+  "Siap melangkah maju",
 ];
 
 export function ProcessStrip() {
@@ -23,10 +27,10 @@ export function ProcessStrip() {
       aria-labelledby="process-title"
     >
       <div className={styles.heading}>
-        <p id="process-title">Dari proses manual</p>
+        <p id="process-title">Dari pekerjaan yang rumit</p>
         <span aria-hidden="true" />
         <ArrowRightIcon />
-        <p>Menuju sistem yang terhubung</p>
+        <p>Menjadi proses yang lebih sederhana</p>
       </div>
       <div className={styles.flow}>
         <div className={styles.group}>
