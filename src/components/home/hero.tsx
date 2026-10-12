@@ -17,17 +17,17 @@ const assurances = [
 
 /* Jalur koneksi kartu -> inti logo (viewBox 720x600). */
 const paths = [
-  { d: "M268 150 C318 150 292 198 277 217", dur: "3.8s", begin: "0s" },
-  { d: "M452 140 C402 140 428 198 443 217", dur: "3.8s", begin: "-1.9s" },
-  { d: "M262 455 C312 455 292 402 277 383", dur: "4.2s", begin: "-1s" },
-  { d: "M452 470 C402 470 428 402 443 383", dur: "4.2s", begin: "-3.1s" },
+  { d: "M266 150 C320 150 300 230 328 272", dur: "3.8s", begin: "0s" },
+  { d: "M454 150 C400 150 420 230 392 272", dur: "3.8s", begin: "-1.9s" },
+  { d: "M266 570 C320 570 300 490 328 448", dur: "4.2s", begin: "-1s" },
+  { d: "M454 570 C400 570 420 490 392 448", dur: "4.2s", begin: "-3.1s" },
 ];
 
 const nodes = [
-  { cx: 268, cy: 150, cls: styles.nodeOrange },
-  { cx: 452, cy: 140, cls: styles.nodeGreen },
-  { cx: 262, cy: 455, cls: styles.nodeSand },
-  { cx: 452, cy: 470, cls: styles.nodeOrange },
+  { cx: 266, cy: 150, cls: styles.nodeOrange },
+  { cx: 454, cy: 150, cls: styles.nodeGreen },
+  { cx: 266, cy: 570, cls: styles.nodeSand },
+  { cx: 454, cy: 570, cls: styles.nodeOrange },
 ];
 
 export function Hero() {
@@ -73,7 +73,7 @@ export function Hero() {
       <div className={styles.visual}>
         <svg
           className={styles.connections}
-          viewBox="0 0 720 600"
+          viewBox="0 0 720 720"
           preserveAspectRatio="none"
           aria-hidden="true"
         >

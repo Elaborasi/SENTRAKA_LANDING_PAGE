@@ -48,30 +48,36 @@
 
 .group {
   display: grid;
-  grid-auto-columns: 1fr;
+  min-width: 0;
+  grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
   gap: 0.7rem;
 }
 
 .cell {
   display: flex;
+  min-width: 0;
 }
 
 .beforeItem,
 .afterItem {
   position: relative;
   display: flex;
-  min-height: 4.5rem;
+  min-width: 0;
+  min-height: 5.75rem;
   flex: 1;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 0.85rem 0.95rem;
   overflow: hidden;
   border: 1px solid rgba(15, 61, 51, 0.05);
   border-radius: 1rem;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 550;
-  line-height: 1.3;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .beforeItem svg,
@@ -179,6 +185,14 @@
 }
 
 @media (max-width: 1100px) {
+  .beforeItem,
+  .afterItem {
+    min-height: 4.25rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   .group {
     grid-auto-flow: row;
     grid-template-columns: repeat(2, minmax(0, 1fr));

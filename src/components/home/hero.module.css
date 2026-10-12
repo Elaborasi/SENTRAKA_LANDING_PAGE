@@ -55,7 +55,9 @@
 /* ---------- Visual: koneksi data + kartu mengambang ---------- */
 .visual {
   position: relative;
-  min-height: 36rem;
+  width: 100%;
+  aspect-ratio: 1;
+  container-type: inline-size;
   isolation: isolate;
 }
 
@@ -176,9 +178,9 @@
   z-index: 3;
   top: 50%;
   left: 50%;
-  width: 13rem;
-  height: 13rem;
-  margin: -6.5rem 0 0 -6.5rem;
+  width: 26cqw;
+  height: 26cqw;
+  margin: -13cqw 0 0 -13cqw;
 }
 
 .core {
@@ -199,7 +201,7 @@
 }
 
 .core img {
-  width: 8.6rem;
+  width: 62%;
   height: auto;
 }
 
@@ -223,7 +225,7 @@
 .card {
   position: absolute;
   z-index: 2;
-  width: min(17.5rem, 46%);
+  width: 37cqw;
 }
 
 .enter {
@@ -237,7 +239,7 @@
 .card article {
   position: relative;
   overflow: hidden;
-  padding: 1.3rem 1.35rem 1.4rem;
+  padding: clamp(0.9rem, 3cqw, 1.3rem);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 1.5rem;
   background: rgba(255, 253, 248, 0.9);
@@ -426,21 +428,21 @@
 .card h3 {
   margin-top: 0.35rem;
   color: var(--forest);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.9cqw, 1.2rem);
   font-weight: 650;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .copyText {
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-size: clamp(0.8rem, 2.3cqw, 0.9rem);
+  line-height: 1.5;
 }
 
 .c1 {
-  top: 6%;
+  top: 3%;
   left: 0;
 }
 
@@ -450,22 +452,33 @@
 }
 
 .c3 {
-  bottom: 8%;
-  left: -2%;
+  bottom: 3%;
+  left: 0;
 }
 
 .c4 {
-  right: -2%;
+  right: 0;
   bottom: 0;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1320px) {
+  .icon {
+    display: none;
+  }
+
+  .tag {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1180px) {
   .hero {
     grid-template-columns: 1fr;
   }
 
   .visual {
-    min-height: 0;
+    aspect-ratio: auto;
+    container-type: normal;
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -496,6 +509,14 @@
   .card {
     position: static;
     width: auto;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+  }
+
+  .copyText {
+    font-size: 0.9rem;
   }
 }
 
