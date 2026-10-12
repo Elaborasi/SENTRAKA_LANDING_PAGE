@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.00 116.00" width="494.00" height="116.00" role="img" aria-label="Empat modul geometris Sentraka">
+
+<g transform="translate(8,8)">
+<path d="M50,0 H96 A4,4 0 0 1 100,4 V96 A4,4 0 0 1 96,100 H50 A50,50 0 0 1 0,50 V50 A50,50 0 0 1 50,0 Z" fill="#0F3D33"/>
+<circle cx="176" cy="50" r="50" fill="#F97316"/>
+<path d="M256,0 H302 A50,50 0 0 1 352,50 V50 A50,50 0 0 1 302,100 H256 A4,4 0 0 1 252,96 V4 A4,4 0 0 1 256,0 Z" fill="#D4A574"/>
+<path d="M382,0 H428 A50,50 0 0 1 478,50 V96 A4,4 0 0 1 474,100 H428 A50,50 0 0 1 378,50 V4 A4,4 0 0 1 382,0 Z" fill="#0F3D33"/>
+</g>
+</svg>

@@ -1,0 +1,203 @@
+.section {
+  scroll-margin-top: var(--header-h);
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.title {
+  max-width: 34rem;
+  margin-top: 0.9rem;
+}
+
+.all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--orange);
+  color: var(--forest);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.all svg {
+  transition: transform 320ms var(--ease);
+}
+
+.all:hover svg {
+  transform: translateX(4px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 2.75rem;
+}
+
+.cell {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  min-height: 22rem;
+  flex: 1;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+  border-radius: 1.75rem;
+  transition:
+    transform 450ms var(--ease),
+    box-shadow 450ms var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1.8rem 3rem rgba(15, 61, 51, 0.18);
+  }
+
+  .card:hover .shape {
+    transform: rotate(-8deg) scale(1.06);
+  }
+}
+
+.shape {
+  width: 3.75rem;
+  height: 3.75rem;
+  margin-bottom: 1.6rem;
+  transition: transform 500ms var(--ease);
+}
+
+.card h3 {
+  font-size: 1.75rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.card p {
+  margin-top: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.forest {
+  background: var(--forest);
+  color: white;
+}
+
+.forest p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.peach {
+  background: #fbe3d0;
+  color: #7a2a0a;
+}
+
+.peach p {
+  color: rgba(122, 42, 10, 0.82);
+}
+
+.sand {
+  background: #e8d5b9;
+  color: #2c1d0e;
+}
+
+.sand p {
+  color: rgba(44, 29, 14, 0.78);
+}
+
+.navy {
+  background: var(--navy);
+  color: white;
+}
+
+.navy p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .card {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: 3.25rem 1fr;
+    column-gap: 1.1rem;
+    padding: 1.4rem;
+  }
+
+  .shape {
+    grid-row: span 2;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0;
+  }
+
+  .card h3 {
+    font-size: 1.35rem;
+  }
+
+  .card p {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Idle: ikon modul bernapas pelan, bergantian antar kartu */
+.shape {
+  animation: shape-breathe 6s ease-in-out infinite;
+}
+
+.cell:nth-child(2) .shape {
+  animation-delay: -1.5s;
+}
+
+.cell:nth-child(3) .shape {
+  animation-delay: -3s;
+}
+
+.cell:nth-child(4) .shape {
+  animation-delay: -4.5s;
+}
+
+@keyframes shape-breathe {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    animation: none;
+  }
+}

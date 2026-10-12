@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
+import { SmoothScroll } from "@/components/layout/smooth-scroll";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -9,9 +12,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Sentraka Digital — Solusi Digital untuk Bisnis yang Lebih Maju",
+  title: {
+    default: "Sentraka Digital — Solusi Digital untuk Bisnis yang Lebih Maju",
+    template: "%s | Sentraka Digital",
+  },
   description:
-    "Sentraka Digital adalah mitra teknologi untuk software, otomasi proses, integrasi sistem, dan produk digital yang praktis serta dapat diandalkan.",
+    "Sentraka Digital adalah mitra teknologi untuk UMKM dan bisnis yang sedang tumbuh: website, toko online pribadi, solusi IT, dan pengelolaan server.",
 };
 
 export const viewport: Viewport = {
@@ -22,7 +28,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="id" className={spaceGrotesk.variable}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

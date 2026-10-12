@@ -1,0 +1,179 @@
+.wrap {
+  width: min(100% - 1.5rem, 96rem);
+  margin: clamp(3rem, 7vw, 6rem) auto;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(3rem, 6vw, 5rem) max(var(--gutter), calc((100% - var(--container)) / 2 + 1.5rem));
+  border-radius: clamp(1.75rem, 3vw, 2.75rem);
+  background: var(--forest);
+  color: white;
+  isolation: isolate;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  max-width: 38rem;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.text {
+  margin-top: 1.1rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.1rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.email {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+}
+
+.email a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.art {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(46%, 36rem);
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+}
+
+.shape svg {
+  width: 100%;
+  height: 100%;
+}
+
+.s1 {
+  top: -14%;
+  right: 34%;
+  width: 32%;
+  aspect-ratio: 1;
+}
+
+.s2 {
+  top: -16%;
+  right: -10%;
+  width: 40%;
+  aspect-ratio: 1;
+}
+
+.s3 {
+  right: 24%;
+  bottom: -14%;
+  width: 50%;
+  aspect-ratio: 1;
+}
+
+.s4 {
+  right: -14%;
+  bottom: -12%;
+  width: 40%;
+  aspect-ratio: 1;
+}
+
+@media (max-width: 760px) {
+  .panel {
+    padding-bottom: 7.5rem;
+  }
+
+  .art {
+    top: auto;
+    width: 100%;
+    height: 9rem;
+    opacity: 0.55;
+  }
+
+  .s1,
+  .s2,
+  .s3,
+  .s4 {
+    width: 9rem;
+  }
+
+  .s1 {
+    top: auto;
+    right: 36%;
+    bottom: 0;
+  }
+
+  .s2 {
+    top: auto;
+    right: 6%;
+    bottom: 1rem;
+  }
+
+  .s3 {
+    right: 62%;
+    bottom: -3rem;
+  }
+
+  .s4 {
+    right: -2rem;
+    bottom: -3rem;
+  }
+}
+
+/* Idle: bentuk melayang pelan, fase berbeda tiap bentuk */
+.shape svg {
+  animation: shape-drift 9s ease-in-out infinite;
+}
+
+.s2 svg {
+  animation-delay: -2.5s;
+  animation-duration: 11s;
+}
+
+.s3 svg {
+  animation-delay: -5s;
+  animation-duration: 10s;
+}
+
+.s4 svg {
+  animation-delay: -7s;
+}
+
+@keyframes shape-drift {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  50% {
+    translate: 0 -8px;
+    rotate: 2deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shape svg {
+    animation: none;
+  }
+}

@@ -1,0 +1,165 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.9fr);
+  align-items: start;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.side {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: white;
+  color: var(--forest);
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-align: left;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    transform 300ms var(--ease);
+}
+
+.tab:hover {
+  transform: translateX(3px);
+}
+
+.tabOn {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: white;
+}
+
+.count {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.help {
+  margin-top: 1.5rem;
+  padding: 1.6rem;
+  border-radius: 1.5rem;
+  background: var(--forest);
+  color: white;
+}
+
+.help h2 {
+  font-size: 1.3rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.help p {
+  margin: 0.6rem 0 1.2rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.panel {
+  min-height: 22rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.item {
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  background: white;
+  transition:
+    border-color 350ms ease,
+    box-shadow 450ms var(--ease);
+}
+
+.itemOpen {
+  border-color: var(--orange);
+  box-shadow: 0 1.2rem 2.6rem rgba(249, 115, 22, 0.12);
+}
+
+.q {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.4rem 1.6rem;
+  color: var(--forest);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.toggle {
+  display: grid;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #efece2;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    transform 400ms var(--ease);
+}
+
+.itemOpen .toggle {
+  background: var(--orange);
+  color: #1b1209;
+}
+
+.a {
+  padding: 0 1.6rem 1.6rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    position: static;
+  }
+
+  .tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .tab {
+    flex: none;
+    gap: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .help {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232.00 232.00" width="232.00" height="232.00" role="img" aria-label="Sentraka Digital">
+
+<g transform="translate(12,12)">
+<path d="M50,0 H96 A4,4 0 0 1 100,4 V96 A4,4 0 0 1 96,100 H50 A50,50 0 0 1 0,50 V50 A50,50 0 0 1 50,0 Z" fill="#F7F5EF"/>
+<circle cx="158" cy="50" r="50" fill="#F97316"/>
+<path d="M4,108 H50 A50,50 0 0 1 100,158 V158 A50,50 0 0 1 50,208 H4 A4,4 0 0 1 0,204 V112 A4,4 0 0 1 4,108 Z" fill="#D4A574"/>
+<path d="M112,108 H158 A50,50 0 0 1 208,158 V204 A4,4 0 0 1 204,208 H158 A50,50 0 0 1 108,158 V112 A4,4 0 0 1 112,108 Z" fill="#F7F5EF"/>
+</g>
+</svg>
