@@ -1,4 +1,4 @@
-import { getEmailLabel, getWhatsAppLabel, siteConfig } from "@/config/site";
+import { siteConfig } from "@/config/site";
 import { WhatsAppButton } from "@/components/ui/button";
 import { Parallax, Reveal } from "@/components/ui/motion";
 import { ModuleShape } from "@/components/ui/modules";
@@ -39,17 +39,11 @@ export function CtaBanner({ title, copy, showEmail = false }: CtaBannerProps) {
             <p className={styles.text}>{copy}</p>
           </Reveal>
           <Reveal delay={0.16} className={styles.actions}>
-            <WhatsAppButton variant="orange">
-              Chat WhatsApp {getWhatsAppLabel()}
-            </WhatsAppButton>
-            {showEmail ? (
+            <WhatsAppButton variant="orange">Chat via WhatsApp</WhatsAppButton>
+            {showEmail && siteConfig.email ? (
               <span className={styles.email}>
                 atau email{" "}
-                {siteConfig.email ? (
-                  <a href={`mailto:${siteConfig.email}`}>{getEmailLabel()}</a>
-                ) : (
-                  getEmailLabel()
-                )}
+                <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
               </span>
             ) : null}
           </Reveal>

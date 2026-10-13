@@ -98,6 +98,7 @@
 
 .q {
   display: flex;
+  min-width: 0;
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -131,6 +132,7 @@
 }
 
 .a {
+  overflow-wrap: anywhere;
   padding: 0 1.6rem 1.6rem;
   color: var(--ink-soft);
   font-size: 1.05rem;
@@ -139,7 +141,12 @@
 
 @media (max-width: 960px) {
   .section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side,
+  .panel {
+    min-width: 0;
   }
 
   .side {
